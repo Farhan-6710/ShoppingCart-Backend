@@ -8,17 +8,7 @@ const port = 5000;
 app.use(cors());
 app.use(express.json()); // Middleware to parse JSON request bodies
 
-// Route to get products
-app.get('/api/products', (req, res) => {
-  fs.readFile('products.json', 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Error fetching products');
-    } else {
-      res.json(JSON.parse(data));
-    }
-  });
-});
+
 
 // Route for signup
 app.post('/api/signup', (req, res) => {
